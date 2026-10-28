@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Dossier contenant le fichier de suivi
+DBPATH=suivi
+
+# Demander confirmation avant le commit
+read -r -p "Ajouter la verification dans ce commit (y/[n]) ? " yn < /dev/tty
+
+case $yn in
+    [Yy]* )
+        # Creer le dossier si necessaire
+        mkdir -p "$DBPATH"
+
+        # Ecrire la date et l'heure dans le fichier
+        echo "commit vérifié le $(date '+%d/%m/%Y %H:%M:%S')" > "$DBPATH/commitInfo.txt"
+
+        # Ajouter le fichier au commit
+        git add "$DBPATH/commitInfo.txt"
+
+        exit 0;;
+
+    [Nn]* )
+        exit 0;;
+esac
+
+exit 0
