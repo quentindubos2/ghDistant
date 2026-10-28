@@ -6,8 +6,8 @@
     <title>Hello World</title>
     <style>
         .fenetre {
-            width: 300px;
-            height: 300px;
+            width: 500px;
+            height: 400px;
             border: 1px solid black;
             display: flex;
             justify-content: center;
@@ -28,13 +28,21 @@
 >>>>>>> 18aa04c (C10 : modification locale depuis VS Code)
 <body>
     <div class="fenetre">
-        <p class="texte" id="message"></p>
+        <p class="texte">
+            <span id="message"></span>
+            <span id="dateJour"></span>
+        </p>
     </div>
 
     <script src="constantes.js"></script>
     <script>
             document.title = HELLO_WORLD;
             document.getElementById("message").textContent = HELLO_WORLD;
+
+            const dateJour = new Date();
+
+    document.getElementById("dateJour").textContent =
+        " - " + dateJour.toLocaleDateString("fr-FR");
     </script>
 </body>
 </html>
