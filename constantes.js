@@ -1,1 +1,1 @@
-const HELLO_WORLD = "Hello World";
+const HELLO_WORLD = "Bienvenue dans mon projet Git avance";
